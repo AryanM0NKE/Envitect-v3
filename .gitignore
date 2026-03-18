@@ -1,0 +1,46 @@
+# ── Dependencies ──────────────────────────────
+node_modules/
+
+# ── Next.js ───────────────────────────────────
+.next/
+out/
+build/
+next-env.d.ts
+
+# ── Environment Variables (NEVER commit) ──────
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# ── Logs ──────────────────────────────────────
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ── Package managers (you use npm, ignore rest) 
+yarn.lock
+pnpm-lock.yaml
+
+# ── TypeScript ────────────────────────────────
+*.tsbuildinfo
+
+# ── OS Files ──────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── IDE / Editor ──────────────────────────────
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+.idea/
+
+# ── Build / Deploy ────────────────────────────
+.vercel/
+.turbo/
+.cache/
+coverage/

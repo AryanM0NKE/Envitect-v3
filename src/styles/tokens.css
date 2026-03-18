@@ -1,0 +1,111 @@
+/* =============================================
+   ENVITECT DESIGNS — DESIGN TOKEN SYSTEM
+   Updated to match Brand Guidelines v2
+   ============================================= */
+
+:root {
+  /* === PRIMARY COLORS (Brand Guidelines v2) === */
+  --color-ink:        #0E0F0D;   /* Primary text, dark backgrounds, mark */
+  --color-teal:       #0A8A7A;   /* Envitect Teal — brand accent, CTAs   */
+  --color-teal-deep:  #065A4F;   /* Dark mode accent                     */
+  --color-teal-pale:  #D6EFEC;   /* Tints, highlights                    */
+  --color-paper:      #F5F2EB;   /* Page background, warmth              */
+
+  /* === SECONDARY COLORS === */
+  --color-gold:       #F0C96B;   /* Premium accents, logo lock point     */
+  --color-gold-pale:  #FDF3D6;
+  --color-slate:      #3A4050;   /* Body text, secondary info            */
+  --color-mist:       #E8E4DC;   /* Subtle borders, dividers             */
+  --color-white:      #FFFFFF;
+  --color-rule:       rgba(14,15,13,0.12);
+
+  /* === SEMANTIC TOKENS === */
+  --bg-primary:       var(--color-paper);
+  --bg-dark:          var(--color-ink);
+  --bg-card:          var(--color-white);
+  --text-primary:     var(--color-ink);
+  --text-secondary:   var(--color-slate);
+  --text-muted:       rgba(14,15,13,0.45);
+  --text-inverse:     var(--color-paper);
+  --accent:           var(--color-teal);
+  --accent-hover:     var(--color-teal-deep);
+  --accent-gold:      var(--color-gold);
+
+  /* === TYPOGRAPHY (Brand Guidelines v2) === */
+  --font-display: 'Barlow Condensed', sans-serif;   /* Headlines, UI labels    */
+  --font-body:    'Barlow Condensed', sans-serif;   /* Body text (Light 300)   */
+  --font-serif:   'Cormorant Garamond', serif;      /* Italic serif accents    */
+  --font-mono:    'DM Mono', monospace;             /* Labels, tags, codes     */
+
+  /* === TYPE SCALE === */
+  --text-xs:   0.75rem;
+  --text-sm:   0.875rem;
+  --text-base: 1rem;
+  --text-lg:   1.125rem;
+  --text-xl:   1.25rem;
+  --text-2xl:  1.5rem;
+  --text-3xl:  1.875rem;
+  --text-4xl:  2.25rem;
+  --text-5xl:  3rem;
+  --text-6xl:  3.75rem;
+  --text-7xl:  4.5rem;
+
+  /* === SPACING === */
+  --space-1:  0.25rem;
+  --space-2:  0.5rem;
+  --space-3:  0.75rem;
+  --space-4:  1rem;
+  --space-5:  1.25rem;
+  --space-6:  1.5rem;
+  --space-8:  2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+
+  /* === LAYOUT === */
+  --header-height:   80px;
+  --max-width:       1280px;
+  --section-padding: var(--space-24) var(--space-8);
+  --container-px:    var(--space-8);
+
+  /* === BORDERS === */
+  --radius-sm:  2px;   /* Brand uses very minimal radius */
+  --radius-md:  4px;
+  --radius-lg:  8px;
+  --radius-xl:  12px;
+  --radius-full: 9999px;
+  --border-subtle: 1px solid rgba(14,15,13,0.08);
+  --border-light:  1px solid rgba(14,15,13,0.12);
+  --border-rule:   1px solid var(--color-rule);
+
+  /* === SHADOWS === */
+  --shadow-sm:   0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
+  --shadow-md:   0 4px 6px rgba(0,0,0,0.07), 0 2px 4px rgba(0,0,0,0.06);
+  --shadow-lg:   0 10px 25px rgba(0,0,0,0.1), 0 4px 10px rgba(0,0,0,0.06);
+  --shadow-xl:   0 20px 40px rgba(0,0,0,0.12), 0 8px 16px rgba(0,0,0,0.08);
+  --shadow-card: 0 0 0 1px rgba(0,0,0,0.05), 0 4px 20px rgba(0,0,0,0.08);
+
+  /* === TRANSITIONS === */
+  --transition-fast:   150ms ease;
+  --transition-base:   250ms ease;
+  --transition-slow:   400ms ease;
+  --transition-spring: 300ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* === Z-INDEX === */
+  --z-base:    0;
+  --z-above:   10;
+  --z-overlay: 100;
+  --z-modal:   200;
+  --z-header:  300;
+  --z-toast:   400;
+
+  /* === GRID === */
+  --grid-line:    rgba(14,15,13,0.06);
+  --blueprint-bg:
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  --blueprint-size: 40px 40px;
+}

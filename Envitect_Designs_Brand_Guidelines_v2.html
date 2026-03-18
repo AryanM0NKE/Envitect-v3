@@ -1,0 +1,2078 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Envitect Designs — Brand Identity Guidelines</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Barlow+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0E0F0D;
+    --paper: #F5F2EB;
+    --teal: #0A8A7A;
+    --teal-deep: #065A4F;
+    --teal-pale: #D6EFEC;
+    --gold: #F0C96B;
+    --gold-pale: #FDF3D6;
+    --slate: #3A4050;
+    --mist: #E8E4DC;
+    --rule: rgba(14,15,13,0.12);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  a { color: inherit; text-decoration: none; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Barlow Condensed', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ─── GLOBAL ─── */
+  .serif { font-family: 'Cormorant Garamond', serif; }
+  .mono  { font-family: 'DM Mono', monospace; }
+
+  .page {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    page-break-after: always;
+    break-after: page;
+    overflow: hidden;
+  }
+
+  /* ─── DECORATIVE ─── */
+  .cross-mark {
+    display: inline-block;
+    width: 14px; height: 14px;
+    position: relative;
+  }
+  .cross-mark::before, .cross-mark::after {
+    content: '';
+    position: absolute;
+    background: var(--teal);
+  }
+  .cross-mark::before { width: 1px; height: 100%; left: 50%; transform: translateX(-50%); }
+  .cross-mark::after  { width: 100%; height: 1px; top: 50%; transform: translateY(-50%); }
+
+  .rule-h { width: 100%; height: 1px; background: var(--rule); }
+  .rule-teal { width: 48px; height: 2px; background: var(--teal); }
+
+  .section-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--teal);
+    text-transform: uppercase;
+  }
+
+  .label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(14,15,13,0.45);
+  }
+
+  /* ─── PAGE 1: COVER ─── */
+  #cover {
+    background: var(--ink);
+    display: grid;
+    grid-template-rows: 1fr auto;
+    min-height: 100vh;
+    padding: 64px;
+  }
+
+  .cover-grid-bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+
+  .cover-teal-band {
+    position: absolute;
+    top: 0; left: 0; bottom: 0;
+    width: 6px;
+    background: linear-gradient(180deg, var(--teal) 0%, var(--teal-deep) 100%);
+  }
+
+  .cover-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 32px;
+    flex: 1;
+  }
+
+  .cover-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    color: var(--teal);
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .cover-eyebrow::after {
+    content: '';
+    flex: 1;
+    max-width: 80px;
+    height: 1px;
+    background: var(--teal);
+    opacity: 0.4;
+  }
+
+  .cover-logo-mark {
+    margin-bottom: 32px;
+  }
+
+  .cover-wordmark {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(72px, 10vw, 120px);
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -0.01em;
+    line-height: 0.9;
+    text-transform: uppercase;
+    display: block;
+  }
+  .cover-wordmark span {
+    color: var(--teal);
+  }
+
+  .cover-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(255,255,255,0.5);
+    margin-top: 20px;
+    letter-spacing: 0.05em;
+  }
+
+  .cover-tagline-block {
+    margin-top: 56px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+  .cover-tagline-block p {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    color: rgba(255,255,255,0.3);
+    text-transform: uppercase;
+  }
+  .cover-tagline-block strong {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    color: rgba(255,255,255,0.7);
+    text-transform: uppercase;
+  }
+
+  .cover-footer {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 24px;
+  }
+  .cover-footer p {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    color: rgba(255,255,255,0.2);
+    text-transform: uppercase;
+  }
+
+  /* ─── PAGE HEADER (reusable) ─── */
+  .page-header {
+    padding: 56px 64px 40px;
+    border-bottom: 1px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .page-header-left h2 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 56px;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin-top: 8px;
+  }
+  .page-header-right {
+    text-align: right;
+  }
+  .page-header-right .brand-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: rgba(14,15,13,0.3);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  /* ─── PAGE 2: LOGO ─── */
+  #logo-page { background: #fff; }
+
+  .logo-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    min-height: calc(100vh - 150px);
+  }
+
+  .logo-left {
+    padding: 56px 64px;
+    border-right: 1px solid var(--rule);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .logo-showcase {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--paper);
+    border: 1px solid var(--mist);
+    border-radius: 2px;
+    padding: 48px;
+    margin-bottom: 32px;
+    position: relative;
+  }
+
+  .logo-showcase-dark {
+    background: var(--ink);
+  }
+
+  /* The actual logo SVG */
+  .envitect-logo-svg {
+    width: 220px;
+    height: auto;
+  }
+
+  .logo-variants {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .logo-variant-box {
+    border: 1px solid var(--rule);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 2/1;
+  }
+
+  .logo-right {
+    padding: 56px 64px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .spec-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .spec-row .spec-key {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(14,15,13,0.5);
+  }
+  .spec-row .spec-val {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    color: var(--ink);
+  }
+
+  .logo-anatomy {
+    background: var(--paper);
+    border: 1px solid var(--mist);
+    padding: 28px;
+    border-radius: 2px;
+  }
+
+  .anatomy-item {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    margin-top: 16px;
+  }
+  .anatomy-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 6px;
+  }
+  .anatomy-item p {
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--slate);
+    font-weight: 300;
+  }
+  .anatomy-item strong {
+    display: block;
+    font-weight: 600;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--ink);
+    margin-bottom: 2px;
+  }
+
+  /* ─── PAGE 3: COLORS ─── */
+  #color-page { background: var(--paper); }
+
+  .color-content {
+    padding: 48px 64px;
+  }
+
+  .color-primary-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  .color-secondary-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 48px;
+  }
+
+  .color-swatch {
+    border-radius: 2px;
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.08);
+  }
+  .swatch-block {
+    height: 120px;
+    position: relative;
+  }
+  .swatch-sm .swatch-block { height: 80px; }
+  .swatch-info {
+    padding: 14px 16px;
+    background: #fff;
+  }
+  .swatch-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--ink);
+    display: block;
+  }
+  .swatch-hex {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: rgba(14,15,13,0.45);
+    letter-spacing: 0.12em;
+    display: block;
+    margin-top: 3px;
+  }
+  .swatch-role {
+    font-size: 11px;
+    color: rgba(14,15,13,0.5);
+    font-weight: 300;
+    display: block;
+    margin-top: 2px;
+  }
+
+  .color-usage {
+    border-top: 1px solid var(--rule);
+    padding-top: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  .usage-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(14,15,13,0.4);
+    margin-bottom: 16px;
+  }
+
+  .combo-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 10px;
+    align-items: center;
+  }
+  .combo-chip {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 14px;
+    border-radius: 2px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    flex: 1;
+  }
+  .combo-dot {
+    width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0;
+  }
+
+  /* ─── PAGE 4: TYPOGRAPHY ─── */
+  #type-page { background: #fff; }
+
+  .type-content {
+    padding: 48px 64px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+  }
+
+  .type-family {
+    border-top: 2px solid var(--ink);
+    padding-top: 24px;
+    margin-bottom: 36px;
+  }
+  .type-family-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 4px;
+  }
+  .type-family-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--slate);
+    margin-bottom: 20px;
+  }
+
+  .type-display {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 72px;
+    font-weight: 700;
+    line-height: 0.9;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin-bottom: 20px;
+  }
+
+  .type-display-serif {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 64px;
+    font-weight: 300;
+    line-height: 1;
+    font-style: italic;
+    color: var(--ink);
+    margin-bottom: 20px;
+  }
+
+  .type-scale {
+    border-top: 1px solid var(--rule);
+    padding-top: 20px;
+  }
+  .type-scale-row {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .type-scale-size {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    color: rgba(14,15,13,0.35);
+    width: 40px;
+    flex-shrink: 0;
+  }
+  .type-scale-sample {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--ink);
+  }
+
+  .type-scale-row.serif-row .type-scale-sample {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: normal;
+  }
+
+  .type-rules {
+    background: var(--paper);
+    border: 1px solid var(--mist);
+    border-radius: 2px;
+    padding: 28px;
+  }
+  .type-rule-item {
+    display: flex;
+    gap: 12px;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .type-rule-item:last-child { border-bottom: none; }
+  .type-rule-bullet {
+    width: 4px; height: 4px; background: var(--teal);
+    border-radius: 50%; flex-shrink: 0; margin-top: 8px;
+  }
+  .type-rule-text {
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--slate);
+    line-height: 1.5;
+  }
+
+  /* ─── PAGE 5: ICONOGRAPHY & VISUAL LANGUAGE ─── */
+  #visual-page { background: var(--paper); }
+
+  .visual-content {
+    padding: 48px 64px;
+  }
+
+  .icon-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 16px;
+    margin-bottom: 48px;
+  }
+
+  .icon-cell {
+    background: #fff;
+    border: 1px solid var(--mist);
+    border-radius: 2px;
+    aspect-ratio: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px 8px 12px;
+    transition: border-color 0.2s;
+  }
+  .icon-cell:hover { border-color: var(--teal); }
+  .icon-cell svg { width: 32px; height: 32px; }
+  .icon-cell-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 0.15em;
+    text-align: center;
+    text-transform: uppercase;
+    color: rgba(14,15,13,0.4);
+    line-height: 1.3;
+  }
+
+  .visual-principles {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .principle-card {
+    border-top: 2px solid var(--teal);
+    padding-top: 20px;
+  }
+  .principle-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--teal);
+    line-height: 1;
+    margin-bottom: 12px;
+    opacity: 0.4;
+  }
+  .principle-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+  .principle-text {
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--slate);
+    line-height: 1.6;
+  }
+
+  /* ─── PAGE 6: BRAND IN USE ─── */
+  #usage-page { background: #fff; }
+
+  .usage-content {
+    padding: 48px 64px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  .mockup-card-biz {
+    background: var(--ink);
+    border-radius: 4px;
+    padding: 28px 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    aspect-ratio: 1.7/1;
+    position: relative;
+    overflow: hidden;
+  }
+  .mockup-card-biz::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 4px;
+    background: var(--teal);
+  }
+  .biz-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+  .biz-name span { color: var(--teal); }
+  .biz-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin-top: 4px;
+  }
+  .biz-contact {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 0.1em;
+    line-height: 1.8;
+  }
+
+  .mockup-letterhead {
+    border: 1px solid var(--mist);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .lh-header {
+    background: var(--ink);
+    padding: 18px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .lh-logo-text {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+  .lh-logo-text span { color: var(--teal); }
+  .lh-contact-small {
+    font-family: 'DM Mono', monospace;
+    font-size: 8px;
+    color: rgba(255,255,255,0.35);
+    letter-spacing: 0.1em;
+    text-align: right;
+    line-height: 1.8;
+  }
+  .lh-body {
+    padding: 24px;
+    background: #fff;
+  }
+  .lh-date {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: rgba(14,15,13,0.35);
+    letter-spacing: 0.12em;
+    margin-bottom: 20px;
+  }
+  .lh-lines { display: flex; flex-direction: column; gap: 7px; }
+  .lh-line { height: 6px; border-radius: 1px; background: var(--mist); }
+  .lh-line.short { width: 60%; }
+  .lh-line.medium { width: 85%; }
+  .lh-line.full { width: 100%; }
+  .lh-footer {
+    padding: 10px 24px;
+    border-top: 2px solid var(--teal);
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .lh-footer-text {
+    font-family: 'DM Mono', monospace;
+    font-size: 8px;
+    color: rgba(14,15,13,0.3);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .mockup-signage {
+    background: var(--teal-deep);
+    border-radius: 2px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 12px;
+    aspect-ratio: 2/1;
+  }
+  .signage-word {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    line-height: 1;
+  }
+  .signage-word span { color: var(--gold); }
+  .signage-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14px;
+    font-style: italic;
+    color: rgba(255,255,255,0.55);
+    letter-spacing: 0.05em;
+  }
+
+  .mockup-email-sig {
+    border: 1px solid var(--mist);
+    border-radius: 2px;
+    padding: 20px 24px;
+    background: #fafafa;
+    border-left: 4px solid var(--teal);
+  }
+  .sig-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--ink);
+  }
+  .sig-role {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: var(--teal);
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+  .sig-divider {
+    width: 24px; height: 1px;
+    background: var(--rule);
+    margin: 10px 0;
+  }
+  .sig-contact-row {
+    display: flex;
+    gap: 20px;
+    margin-top: 6px;
+  }
+  .sig-contact-item {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    color: rgba(14,15,13,0.4);
+    letter-spacing: 0.1em;
+  }
+  .sig-brand-line {
+    margin-top: 12px;
+    padding-top: 10px;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .sig-brand-word {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--ink);
+  }
+  .sig-brand-word span { color: var(--teal); }
+  .sig-tagline-small {
+    font-family: 'DM Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 0.12em;
+    color: rgba(14,15,13,0.35);
+    text-transform: uppercase;
+  }
+
+  /* ─── PAGE 7: SERVICES IDENTITY ─── */
+  #services-page { background: var(--paper); }
+
+  .services-content {
+    padding: 48px 64px;
+  }
+
+  .service-identity-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+    border: 1px solid var(--rule);
+    margin-bottom: 48px;
+  }
+
+  .service-id-card {
+    border-right: 1px solid var(--rule);
+    padding: 24px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    background: #fff;
+    position: relative;
+  }
+  .service-id-card:last-child { border-right: none; }
+  .service-id-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+  }
+
+  .service-icon-wrap {
+    width: 40px; height: 40px;
+    display: flex; align-items: center; justify-content: center;
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+  .service-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--ink);
+    line-height: 1.2;
+  }
+  .service-desc {
+    font-size: 11px;
+    font-weight: 300;
+    color: rgba(14,15,13,0.5);
+    line-height: 1.5;
+  }
+
+  .brand-voice {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  .voice-card {
+    padding: 28px;
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    background: #fff;
+  }
+  .voice-card-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 16px;
+  }
+  .voice-pairs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .voice-pair {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .voice-pair:last-child { border-bottom: none; }
+  .voice-from {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: rgba(14,15,13,0.35);
+    text-decoration: line-through;
+  }
+  .voice-arrow { color: rgba(14,15,13,0.2); font-size: 12px; }
+  .voice-to {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--teal-deep);
+  }
+  .voice-word {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .voice-word-def {
+    font-size: 12px;
+    font-weight: 300;
+    color: var(--slate);
+    line-height: 1.5;
+  }
+
+  /* ─── PAGE 8: DON'TS & GUIDELINES ─── */
+  #guidelines-page { background: #fff; }
+
+  .guidelines-content {
+    padding: 48px 64px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+  }
+
+  .donts-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .dont-card {
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    overflow: hidden;
+    position: relative;
+  }
+  .dont-card::after {
+    content: '✕';
+    position: absolute;
+    top: 8px; right: 10px;
+    font-size: 14px;
+    color: #E05252;
+    font-weight: 700;
+  }
+  .dont-inner {
+    padding: 20px;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .dont-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(14,15,13,0.4);
+    padding: 8px 12px;
+    background: #FFF5F5;
+    border-top: 1px solid rgba(224,82,82,0.15);
+  }
+
+  .contact-info-block {
+    background: var(--paper);
+    border: 1px solid var(--mist);
+    border-radius: 2px;
+    padding: 32px;
+  }
+  .contact-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .contact-row:last-child { border-bottom: none; }
+  .contact-key {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(14,15,13,0.35);
+  }
+  .contact-val {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--teal-deep);
+    letter-spacing: 0.04em;
+  }
+
+  .brand-promise {
+    background: var(--ink);
+    border-radius: 2px;
+    padding: 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  .brand-promise::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 4px;
+    background: var(--teal);
+  }
+  .promise-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.35;
+    margin-bottom: 20px;
+  }
+  .promise-attr {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--teal);
+  }
+
+  @media print {
+    .page { page-break-after: always; break-after: page; }
+    body { background: #fff; }
+  }
+
+  @media (max-width: 768px) {
+    #cover { padding: 40px 32px; }
+    .page-header { padding: 40px 32px 28px; }
+    .logo-content,
+    .type-content,
+    .usage-content,
+    .brand-voice,
+    .guidelines-content { grid-template-columns: 1fr; }
+    .logo-left, .logo-right,
+    .color-content,
+    .visual-content,
+    .services-content { padding: 32px; }
+    .service-identity-grid { grid-template-columns: 1fr 1fr; }
+    .icon-grid { grid-template-columns: repeat(3,1fr); }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- PAGE 1 · COVER -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<section class="page" id="cover">
+  <div class="cover-grid-bg"></div>
+  <div class="cover-teal-band"></div>
+
+  <div class="cover-content">
+    <div class="cover-eyebrow">Brand Identity Guidelines</div>
+
+    <div class="cover-logo-mark">
+      <svg width="72" height="72" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Left L (Engineering) -->
+        <path d="M6 6 L42 6 L42 42 L28 42 L28 20 L6 20 Z" fill="white" opacity="0.92"/>
+        <!-- Right L (Environment) -->
+        <path d="M78 78 L42 78 L42 42 L56 42 L56 64 L78 64 Z" fill="#0A8A7A"/>
+        <!-- Gold lock point -->
+        <rect x="38" y="38" width="8" height="8" fill="#F0C96B"/>
+        <!-- CAD lines -->
+        <line x1="6" y1="13" x2="42" y2="13" stroke="rgba(255,255,255,0.18)" stroke-width="1" stroke-dasharray="3 3"/>
+        <line x1="16" y1="6" x2="16" y2="20" stroke="rgba(255,255,255,0.18)" stroke-width="1" stroke-dasharray="3 3"/>
+        <!-- Organic curve -->
+        <path d="M44 78 Q62 68 78 68" stroke="rgba(255,255,255,0.18)" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+      </svg>
+    </div>
+
+    <span class="cover-wordmark">Envitect<span>.</span></span>
+    <span class="cover-wordmark" style="color:rgba(255,255,255,0.25); font-size: clamp(32px,4vw,52px); margin-top:4px; letter-spacing:0.08em;">Designs</span>
+    <p class="cover-sub">Environment × Technology</p>
+
+    <div class="cover-tagline-block">
+      <div>
+        <p>Tagline</p>
+        <strong>Design. Engineer. Deliver. — All in One Place</strong>
+      </div>
+      <div style="width:1px; height:36px; background:rgba(255,255,255,0.1);"></div>
+      <div>
+        <p>Document</p>
+        <strong>Brand Identity v1.0</strong>
+      </div>
+    </div>
+  </div>
+
+  <footer class="cover-footer">
+    <p>Architecture × BIM × CAD × Solar × Graphic Design</p>
+    <p>envitectdesigns.com</p>
+  </footer>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- PAGE 2 · LOGO -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<section class="page" id="logo-page">
+  <div class="page-header">
+    <div class="page-header-left">
+      <div class="section-num">01 — Logo System</div>
+      <h2>The Mark</h2>
+    </div>
+    <div class="page-header-right">
+      <span class="brand-tag">Envitect Designs · Brand Guidelines</span>
+    </div>
+  </div>
+
+  <div class="logo-content">
+
+    <!-- LEFT: Logo Showcase -->
+    <div class="logo-left">
+      <!-- Primary on light -->
+      <div class="logo-showcase" style="margin-bottom:16px;">
+        <svg width="300" height="100" viewBox="0 0 300 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Mark -->
+          <path d="M8 8 L44 8 L44 44 L30 44 L30 22 L8 22 Z" fill="#0E0F0D"/>
+          <path d="M76 76 L40 76 L40 44 L54 44 L54 62 L76 62 Z" fill="#0A8A7A"/>
+          <rect x="36" y="40" width="8" height="8" fill="#F0C96B"/>
+          <line x1="8"  y1="15" x2="44" y2="15" stroke="rgba(255,255,255,0.2)" stroke-width="0.9" stroke-dasharray="2 2"/>
+          <line x1="18" y1="8"  x2="18" y2="22" stroke="rgba(255,255,255,0.2)" stroke-width="0.9" stroke-dasharray="2 2"/>
+          <path d="M42 76 Q58 68 76 68" stroke="rgba(255,255,255,0.18)" stroke-width="1" fill="none" stroke-linecap="round"/>
+          <!-- Wordmark -->
+          <text x="98" y="46" font-family="'Barlow Condensed', sans-serif" font-size="36" font-weight="700" fill="#0E0F0D" letter-spacing="-0.5">ENVITECT</text>
+          <text x="98" y="67" font-family="'Barlow Condensed', sans-serif" font-size="16" font-weight="400" fill="rgba(14,15,13,0.4)" letter-spacing="4">DESIGNS</text>
+        </svg>
+        <div class="label" style="position:absolute;bottom:10px;right:14px;">Primary — Light</div>
+      </div>
+
+      <!-- Primary on dark -->
+      <div class="logo-showcase logo-showcase-dark" style="margin-bottom:24px;">
+        <svg width="300" height="100" viewBox="0 0 300 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8 8 L44 8 L44 44 L30 44 L30 22 L8 22 Z" fill="white" opacity="0.92"/>
+          <path d="M76 76 L40 76 L40 44 L54 44 L54 62 L76 62 Z" fill="#0A8A7A"/>
+          <rect x="36" y="40" width="8" height="8" fill="#F0C96B"/>
+          <line x1="8"  y1="15" x2="44" y2="15" stroke="rgba(255,255,255,0.18)" stroke-width="0.9" stroke-dasharray="2 2"/>
+          <line x1="18" y1="8"  x2="18" y2="22" stroke="rgba(255,255,255,0.18)" stroke-width="0.9" stroke-dasharray="2 2"/>
+          <path d="M42 76 Q58 68 76 68" stroke="rgba(255,255,255,0.18)" stroke-width="1" fill="none" stroke-linecap="round"/>
+          <text x="98" y="46" font-family="'Barlow Condensed', sans-serif" font-size="36" font-weight="700" fill="white" letter-spacing="-0.5">ENVITECT</text>
+          <text x="98" y="67" font-family="'Barlow Condensed', sans-serif" font-size="16" font-weight="400" fill="rgba(255,255,255,0.4)" letter-spacing="4">DESIGNS</text>
+        </svg>
+        <div class="label" style="position:absolute;bottom:10px;right:14px;color:rgba(255,255,255,0.3);">Primary — Dark</div>
+      </div>
+
+      <!-- Small variants -->
+      <div class="logo-variants">
+        <div class="logo-variant-box" style="background:var(--teal-deep);">
+          <svg width="88" height="36" viewBox="0 0 88 36" fill="none">
+            <path d="M2 2 L18 2 L18 18 L12 18 L12 8 L2 8 Z" fill="white" opacity="0.9"/>
+            <path d="M30 30 L14 30 L14 18 L20 18 L20 24 L30 24 Z" fill="rgba(255,255,255,0.35)"/>
+            <rect x="11" y="15" width="5" height="5" fill="#F0C96B"/>
+            <text x="38" y="14" font-family="Barlow Condensed,sans-serif" font-size="11" font-weight="700" fill="white" letter-spacing="0">ENVITECT</text>
+            <text x="38" y="25" font-family="Barlow Condensed,sans-serif" font-size="7" font-weight="400" fill="rgba(255,255,255,0.45)" letter-spacing="2">DESIGNS</text>
+          </svg>
+          <div class="label" style="color:rgba(255,255,255,0.35);">Teal BG</div>
+        </div>
+        <div class="logo-variant-box" style="background:var(--paper);">
+          <svg width="88" height="36" viewBox="0 0 88 36" fill="none">
+            <path d="M2 2 L18 2 L18 18 L12 18 L12 8 L2 8 Z" fill="#0E0F0D"/>
+            <path d="M30 30 L14 30 L14 18 L20 18 L20 24 L30 24 Z" fill="#0A8A7A"/>
+            <rect x="11" y="15" width="5" height="5" fill="#F0C96B"/>
+            <line x1="2" y1="5" x2="18" y2="5" stroke="rgba(255,255,255,0.2)" stroke-width="0.7" stroke-dasharray="2 2"/>
+            <path d="M15 30 Q22 27 30 27" stroke="rgba(255,255,255,0.18)" stroke-width="0.8" fill="none" stroke-linecap="round"/>
+            <text x="38" y="14" font-family="Barlow Condensed,sans-serif" font-size="11" font-weight="700" fill="#0E0F0D" letter-spacing="0">ENVITECT</text>
+            <text x="38" y="25" font-family="Barlow Condensed,sans-serif" font-size="7" font-weight="400" fill="rgba(14,15,13,0.45)" letter-spacing="2">DESIGNS</text>
+          </svg>
+          <div class="label">Paper BG</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: Specs + Anatomy -->
+    <div class="logo-right">
+      <div>
+        <div class="label" style="margin-bottom:16px;">Construction Specifications</div>
+        <div class="spec-row"><span class="spec-key">Geometry</span><span class="spec-val">Two interlocking L-shapes</span></div>
+        <div class="spec-row"><span class="spec-key">Grid</span><span class="spec-val">Perfect 1:1 square</span></div>
+        <div class="spec-row"><span class="spec-key">Min. Digital</span><span class="spec-val">20px mark height</span></div>
+        <div class="spec-row"><span class="spec-key">Min. Print</span><span class="spec-val">8mm mark height</span></div>
+        <div class="spec-row"><span class="spec-key">Clearspace</span><span class="spec-val">0.5× mark width on all sides</span></div>
+        <div class="spec-row"><span class="spec-key">Formats</span><span class="spec-val">SVG · PNG · EPS · PDF</span></div>
+      </div>
+
+      <div class="logo-anatomy">
+        <div class="label" style="margin-bottom:20px;">Mark Anatomy</div>
+
+        <div class="anatomy-item">
+          <div class="anatomy-dot" style="background: var(--ink);"></div>
+          <div>
+            <strong>Engineering Piece (Ink)</strong>
+            <p>The structural L-form — the built, precise world. CAD construction lines etched within suggest drafting, blueprints, and technical documentation.</p>
+          </div>
+        </div>
+
+        <div class="anatomy-item" style="margin-top:16px;">
+          <div class="anatomy-dot" style="background: var(--teal);"></div>
+          <div>
+            <strong>Environment Piece (Teal)</strong>
+            <p>The mirrored L-form — the living, sustainable world. Organic curves within reference solar irradiance and topographic contours.</p>
+          </div>
+        </div>
+
+        <div class="anatomy-item" style="margin-top:16px;">
+          <div class="anatomy-dot" style="background: var(--gold);"></div>
+          <div>
+            <strong>The Lock Point (Gold)</strong>
+            <p>The exact junction of the two pieces — zero gap. A resolved clash made visible. Precision, craft, and value in one point.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- PAGE 3 · COLOR PALETTE -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<section class="page" id="color-page">
+  <div class="page-header">
+    <div class="page-header-left">
+      <div class="section-num">02 — Color System</div>
+      <h2>Palette</h2>
+    </div>
+    <div class="page-header-right">
+      <span class="brand-tag">Envitect Designs · Brand Guidelines</span>
+    </div>
+  </div>
+
+  <div class="color-content">
+
+    <!-- Primary swatches -->
+    <div class="label" style="margin-bottom:12px;">Primary Palette</div>
+    <div class="color-primary-row">
+      <div class="color-swatch">
+        <div class="swatch-block" style="background:#0E0F0D;"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">Ink</span>
+          <span class="swatch-hex">#0E0F0D</span>
+          <span class="swatch-role">Primary text, backgrounds, mark</span>
+        </div>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch-block" style="background:#0A8A7A;"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">Envitect Teal</span>
+          <span class="swatch-hex">#0A8A7A</span>
+          <span class="swatch-role">Brand accent, arc, CTAs</span>
+        </div>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch-block" style="background:#F5F2EB;"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">Paper</span>
+          <span class="swatch-hex">#F5F2EB</span>
+          <span class="swatch-role">Page background, warmth</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Secondary swatches -->
+    <div class="label" style="margin-bottom:12px; margin-top:8px;">Secondary Palette</div>
+    <div class="color-secondary-row">
+      <div class="color-swatch swatch-sm">
+        <div class="swatch-block" style="background:#065A4F;"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">Deep Teal</span>
+          <span class="swatch-hex">#065A4F</span>
+          <span class="swatch-role">Dark mode accent</span>
+        </div>
+      </div>
+      <div class="color-swatch swatch-sm">
+        <div class="swatch-block" style="background:#D6EFEC;"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">Pale Teal</span>
+          <span class="swatch-hex">#D6EFEC</span>
+          <span class="swatch-role">Tints, highlights</span>
+        </div>
+      </div>
+      <div class="color-swatch swatch-sm">
+        <div class="swatch-block" style="background:#F0C96B;"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">Gold</span>
+          <span class="swatch-hex">#F0C96B</span>
+          <span class="swatch-role">Premium, awards, accents</span>
+        </div>
+      </div>
+      <div class="color-swatch swatch-sm">
+        <div class="swatch-block" style="background:#3A4050;"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">Slate</span>
+          <span class="swatch-hex">#3A4050</span>
+          <span class="swatch-role">Body text, secondary info</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Color usage -->
+    <div class="color-usage">
+      <div>
+        <div class="usage-title">Approved Combinations</div>
+        <div class="combo-row">
+          <div class="combo-chip" style="background:#0E0F0D; color:white;">
+            <div class="combo-dot" style="background:#0A8A7A;"></div>
+            Teal on Ink — Primary CTA
+          </div>
+        </div>
+        <div class="combo-row">
+          <div class="combo-chip" style="background:#F5F2EB; color:#0E0F0D; border:1px solid rgba(14,15,13,0.1);">
+            <div class="combo-dot" style="background:#0A8A7A;"></div>
+            Teal on Paper — Accents
+          </div>
+        </div>
+        <div class="combo-row">
+          <div class="combo-chip" style="background:#0A8A7A; color:white;">
+            <div class="combo-dot" style="background:white; border:1px solid rgba(255,255,255,0.3);"></div>
+            White on Teal — Buttons
+          </div>
+        </div>
+        <div class="combo-row">
+          <div class="combo-chip" style="background:#065A4F; color:#F0C96B;">
+            <div class="combo-dot" style="background:#F0C96B;"></div>
+            Gold on Deep Teal — Premium
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="usage-title">Color Proportions</div>
+        <!-- Simple visual proportion bar -->
+        <div style="display:flex;height:48px;border-radius:2px;overflow:hidden;margin-bottom:16px;">
+          <div style="flex:5;background:#0E0F0D;" title="Ink 50%"></div>
+          <div style="flex:3;background:#0A8A7A;" title="Teal 30%"></div>
+          <div style="flex:2;background:#F5F2EB;border:1px solid rgba(14,15,13,0.08);" title="Paper 20%"></div>
+        </div>
+        <div style="display:flex;gap:16px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;"><div style="width:10px;height:10px;background:#0E0F0D;border-radius:2px;"></div><span class="label">Ink 50%</span></div>
+          <div style="display:flex;align-items:center;gap:6px;"><div style="width:10px;height:10px;background:#0A8A7A;border-radius:2px;"></div><span class="label">Teal 30%</span></div>
+          <div style="display:flex;align-items:center;gap:6px;"><div style="width:10px;height:10px;background:#F5F2EB;border:1px solid rgba(14,15,13,0.15);border-radius:2px;"></div><span class="label">Paper 20%</span></div>
+        </div>
+
+        <div style="margin-top:24px;">
+          <div class="usage-title">Accessibility</div>
+          <div style="display:flex;flex-direction:column;gap:8px;margin-top:8px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:#0E0F0D;border-radius:2px;">
+              <span style="font-family:'DM Mono',monospace;font-size:10px;color:white;letter-spacing:0.1em;">White on Ink</span>
+              <span style="font-family:'DM Mono',monospace;font-size:9px;color:rgba(255,255,255,0.5);">21:1 — AAA</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:#0A8A7A;border-radius:2px;">
+              <span style="font-family:'DM Mono',monospace;font-size:10px;color:white;letter-spacing:0.1em;">White on Teal</span>
+              <span style="font-family:'DM Mono',monospace;font-size:9px;color:rgba(255,255,255,0.65);">4.9:1 — AA</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:#F5F2EB;border:1px solid rgba(14,15,13,0.1);border-radius:2px;">
+              <span style="font-family:'DM Mono',monospace;font-size:10px;color:#0E0F0D;letter-spacing:0.1em;">Ink on Paper</span>
+              <span style="font-family:'DM Mono',monospace;font-size:9px;color:rgba(14,15,13,0.45);">19:1 — AAA</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- PAGE 4 · TYPOGRAPHY -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<section class="page" id="type-page">
+  <div class="page-header">
+    <div class="page-header-left">
+      <div class="section-num">03 — Typography</div>
+      <h2>Type System</h2>
+    </div>
+    <div class="page-header-right">
+      <span class="brand-tag">Envitect Designs · Brand Guidelines</span>
+    </div>
+  </div>
+
+  <div class="type-content">
+
+    <!-- LEFT: Display + Scale -->
+    <div>
+      <div class="type-family">
+        <div class="type-family-label">Display · Headlines</div>
+        <div class="type-family-name">Barlow Condensed</div>
+        <div class="type-display">ARCHI<br>TECT<br>URE</div>
+        <div class="rule-teal" style="margin-bottom:12px;"></div>
+        <div class="label">Aa Bb Cc — 700 · 600 · 500 · 300</div>
+      </div>
+
+      <div class="type-scale">
+        <div class="type-scale-row">
+          <span class="type-scale-size">72px</span>
+          <span class="type-scale-sample" style="font-size:48px;">ENVITECT</span>
+        </div>
+        <div class="type-scale-row">
+          <span class="type-scale-size">48px</span>
+          <span class="type-scale-sample" style="font-size:36px;">Design + Engineer</span>
+        </div>
+        <div class="type-scale-row">
+          <span class="type-scale-size">32px</span>
+          <span class="type-scale-sample" style="font-size:24px;">BIM · CAD · Solar</span>
+        </div>
+        <div class="type-scale-row">
+          <span class="type-scale-size">20px</span>
+          <span class="type-scale-sample" style="font-size:18px;">Section Headings</span>
+        </div>
+        <div class="type-scale-row">
+          <span class="type-scale-size">14px</span>
+          <span class="type-scale-sample" style="font-size:14px; font-weight:500;">Labels · Navigation · UI</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: Serif + Mono + Rules -->
+    <div>
+      <div class="type-family">
+        <div class="type-family-label">Accent · Editorial</div>
+        <div class="type-family-name">Cormorant Garamond</div>
+        <div class="type-display-serif">Design<br>with purpose.</div>
+        <div class="rule-teal" style="margin-bottom:12px;"></div>
+        <div class="label">300 Italic · 400 · 600</div>
+      </div>
+
+      <div class="type-family" style="margin-top:32px;">
+        <div class="type-family-label">Technical · Metadata</div>
+        <div class="type-family-name">DM Mono</div>
+        <div style="font-family:'DM Mono',monospace; font-size:22px; font-weight:300; color:var(--teal); letter-spacing:0.08em; line-height:1.5; margin-bottom:12px;">
+          LOD 300 · BIM<br>#0A8A7A · Revit<br>ARC/STRUC/MEP
+        </div>
+        <div class="rule-teal" style="margin-bottom:12px;"></div>
+        <div class="label">300 · 400 · 500</div>
+      </div>
+
+      <div class="type-rules" style="margin-top:20px;">
+        <div class="label" style="margin-bottom:14px;">Usage Rules</div>
+        <div class="type-rule-item">
+          <div class="type-rule-bullet"></div>
+          <p class="type-rule-text"><strong style="color:var(--ink);font-weight:600;">Barlow Condensed</strong> for all headlines, navigation, buttons, and UI text. Use 700 for impact, 400 for body.</p>
+        </div>
+        <div class="type-rule-item">
+          <div class="type-rule-bullet"></div>
+          <p class="type-rule-text"><strong style="color:var(--ink);font-weight:600;">Cormorant Garamond</strong> for taglines, pull quotes, and editorial moments only. Never for UI or forms.</p>
+        </div>
+        <div class="type-rule-item">
+          <div class="type-rule-bullet"></div>
+          <p class="type-rule-text"><strong style="color:var(--ink);font-weight:600;">DM Mono</strong> for labels, codes, metadata, technical specs, and section numbers.</p>
+        </div>
+        <div class="type-rule-item">
+          <div class="type-rule-bullet"></div>
+          <p class="type-rule-text">Minimum body text size: 14px digital / 9pt print. Line height: 1.5× for body, 1.0× for display.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- PAGE 5 · VISUAL LANGUAGE -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<section class="page" id="visual-page">
+  <div class="page-header">
+    <div class="page-header-left">
+      <div class="section-num">04 — Visual Language</div>
+      <h2>Iconography</h2>
+    </div>
+    <div class="page-header-right">
+      <span class="brand-tag">Envitect Designs · Brand Guidelines</span>
+    </div>
+  </div>
+
+  <div class="visual-content">
+
+    <div class="label" style="margin-bottom:16px;">Icon System — 2px Stroke, Round Caps</div>
+    <div class="icon-grid">
+      <!-- Architecture -->
+      <div class="icon-cell">
+        <svg fill="none" stroke="#0A8A7A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 32 32">
+          <path d="M4 28V14L16 4l12 10v14H4z"/>
+          <rect x="12" y="20" width="8" height="8"/>
+        </svg>
+        <div class="icon-cell-label">Architecture</div>
+      </div>
+      <!-- CAD -->
+      <div class="icon-cell">
+        <svg fill="none" stroke="#0A8A7A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 32 32">
+          <rect x="4" y="6" width="24" height="20" rx="1"/>
+          <line x1="10" y1="12" x2="22" y2="12"/>
+          <line x1="10" y1="16" x2="22" y2="16"/>
+          <line x1="10" y1="20" x2="16" y2="20"/>
+          <line x1="4" y1="10" x2="28" y2="10"/>
+        </svg>
+        <div class="icon-cell-label">CAD Drafting</div>
+      </div>
+      <!-- BIM -->
+      <div class="icon-cell">
+        <svg fill="none" stroke="#0A8A7A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 32 32">
+          <path d="M16 4l12 7v10L16 28 4 21V11L16 4z"/>
+          <path d="M16 4v24M28 11L4 21M4 11l24 10"/>
+        </svg>
+        <div class="icon-cell-label">BIM</div>
+      </div>
+      <!-- Solar -->
+      <div class="icon-cell">
+        <svg fill="none" stroke="#0A8A7A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 32 32">
+          <circle cx="16" cy="16" r="6"/>
+          <line x1="16" y1="4" x2="16" y2="7"/>
+          <line x1="16" y1="25" x2="16" y2="28"/>
+          <line x1="4" y1="16" x2="7" y2="16"/>
+          <line x1="25" y1="16" x2="28" y2="16"/>
+          <line x1="8" y1="8" x2="10.1" y2="10.1"/>
+          <line x1="21.9" y1="21.9" x2="24" y2="24"/>
+          <line x1="24" y1="8" x2="21.9" y2="10.1"/>
+          <line x1="10.1" y1="21.9" x2="8" y2="24"/>
+        </svg>
+        <div class="icon-cell-label">Solar</div>
+      </div>
+      <!-- Graphic Design -->
+      <div class="icon-cell">
+        <svg fill="none" stroke="#0A8A7A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 32 32">
+          <circle cx="10" cy="10" r="4"/>
+          <circle cx="22" cy="10" r="4"/>
+          <circle cx="16" cy="21" r="4"/>
+          <path d="M14 10h4M13 14l3 7M19 14l-3 7" opacity="0.4"/>
+        </svg>
+        <div class="icon-cell-label">Graphic Design</div>
+      </div>
+      <!-- Portfolio -->
+      <div class="icon-cell">
+        <svg fill="none" stroke="#0A8A7A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 32 32">
+          <rect x="4" y="8" width="24" height="20" rx="1"/>
+          <path d="M10 8V6a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2"/>
+          <line x1="4" y1="16" x2="28" y2="16"/>
+        </svg>
+        <div class="icon-cell-label">Portfolio</div>
+      </div>
+      <!-- Clash Detection -->
+      <div class="icon-cell">
+        <svg fill="none" stroke="#0A8A7A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 32 32">
+          <circle cx="12" cy="16" r="8" opacity="0.6"/>
+          <circle cx="20" cy="16" r="8" opacity="0.6"/>
+          <path d="M16 9.8a8 8 0 0 1 0 12.4" stroke="#E05252"/>
+          <path d="M16 9.8a8 8 0 0 0 0 12.4" stroke="#E05252"/>
+        </svg>
+        <div class="icon-cell-label">Clash Detection</div>
+      </div>
+      <!-- Scan to BIM -->
+      <div class="icon-cell">
+        <svg fill="none" stroke="#0A8A7A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 32 32">
+          <path d="M8 6H5a1 1 0 0 0-1 1v3M24 6h3a1 1 0 0 1 1 1v3M8 26H5a1 1 0 0 1-1-1v-3M24 26h3a1 1 0 0 0 1-1v-3"/>
+          <line x1="4" y1="16" x2="28" y2="16" stroke-dasharray="2 2"/>
+          <rect x="11" y="11" width="10" height="10" rx="1"/>
+        </svg>
+        <div class="icon-cell-label">Scan-to-BIM</div>
+      </div>
+      <!-- PE Stamping -->
+      <div class="icon-cell">
+        <svg fill="none" stroke="#0A8A7A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 32 32">
+          <circle cx="16" cy="16" r="11"/>
+          <circle cx="16" cy="16" r="8"/>
+          <polyline points="12,16 15,19 20,13"/>
+        </svg>
+        <div class="icon-cell-label">PE Stamping</div>
+      </div>
+      <!-- Location -->
+      <div class="icon-cell">
+        <svg fill="none" stroke="#0A8A7A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 32 32">
+          <path d="M16 4a9 9 0 0 0-9 9c0 7 9 16 9 16s9-9 9-16a9 9 0 0 0-9-9z"/>
+          <circle cx="16" cy="13" r="3"/>
+        </svg>
+        <div class="icon-cell-label">Global Reach</div>
+      </div>
+      <!-- Speed -->
+      <div class="icon-cell">
+        <svg fill="none" stroke="#0A8A7A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 32 32">
+          <path d="M6 16a10 10 0 1 0 20 0"/>
+          <polyline points="16,8 16,16 21,16"/>
+          <line x1="7" y1="10" x2="9" y2="12"/>
+          <line x1="25" y1="10" x2="23" y2="12"/>
+        </svg>
+        <div class="icon-cell-label">Fast Turnaround</div>
+      </div>
+      <!-- Revit -->
+      <div class="icon-cell">
+        <svg fill="none" stroke="#0A8A7A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 32 32">
+          <rect x="5" y="5" width="22" height="22" rx="2"/>
+          <line x1="5" y1="14" x2="27" y2="14"/>
+          <line x1="14" y1="5" x2="14" y2="27"/>
+          <circle cx="19.5" cy="19.5" r="3.5"/>
+        </svg>
+        <div class="icon-cell-label">Revit Modeling</div>
+      </div>
+    </div>
+
+    <!-- Design Principles -->
+    <div class="label" style="margin-bottom:20px;">Design Principles</div>
+    <div class="visual-principles">
+      <div class="principle-card">
+        <div class="principle-num">01</div>
+        <div class="principle-title">Precision First</div>
+        <p class="principle-text">Every element earns its place. We design with technical accuracy—clean lines, deliberate spacing, and structured composition that reflects our engineering roots.</p>
+      </div>
+      <div class="principle-card">
+        <div class="principle-num">02</div>
+        <div class="principle-title">Environment Conscious</div>
+        <p class="principle-text">The teal arc in our mark is a promise. Sustainable thinking is woven into every visual choice—warmth, organic curves, earthy paper tones against structural ink.</p>
+      </div>
+      <div class="principle-card">
+        <div class="principle-num">03</div>
+        <div class="principle-title">Confident Clarity</div>
+        <p class="principle-text">We don't decorate. We communicate. Visual hierarchy is strict, whitespace is generous, and every design reduces complexity rather than adding to it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- PAGE 6 · BRAND IN USE (MOCKUPS) -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<section class="page" id="usage-page">
+  <div class="page-header">
+    <div class="page-header-left">
+      <div class="section-num">05 — Brand in Use</div>
+      <h2>Applications</h2>
+    </div>
+    <div class="page-header-right">
+      <span class="brand-tag">Envitect Designs · Brand Guidelines</span>
+    </div>
+  </div>
+
+  <div class="usage-content">
+
+    <!-- Business Card -->
+    <div>
+      <div class="label" style="margin-bottom:12px;">Business Card</div>
+      <div class="mockup-card-biz">
+        <div style="display:flex;align-items:center;gap:12px;">
+          <svg width="30" height="30" viewBox="0 0 84 84" fill="none">
+            <path d="M6 6 L42 6 L42 42 L28 42 L28 20 L6 20 Z" fill="white"/>
+            <path d="M78 78 L42 78 L42 42 L56 42 L56 64 L78 64 Z" fill="#0A8A7A"/>
+            <rect x="38" y="38" width="8" height="8" fill="#F0C96B"/>
+            <line x1="6" y1="13" x2="42" y2="13" stroke="rgba(255,255,255,0.2)" stroke-width="1.2" stroke-dasharray="3 3"/>
+            <line x1="16" y1="6" x2="16" y2="20" stroke="rgba(255,255,255,0.2)" stroke-width="1.2" stroke-dasharray="3 3"/>
+            <path d="M44 78 Q62 68 78 68" stroke="rgba(255,255,255,0.2)" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+          </svg>
+          <div>
+            <div class="biz-name">Envitect<span>.</span></div>
+            <div class="biz-title">Designs</div>
+          </div>
+        </div>
+        <div>
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:600;color:#fff;letter-spacing:0.04em;">Rahul Sharma</div>
+          <div class="biz-title">Lead BIM Specialist</div>
+          <div class="biz-contact" style="margin-top:8px;">
+            <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="ff8d9e978a93bf9a9189968b9a9c8b9b9a8c9698918cd19c9092">[email&#160;protected]</a><br>
+            +1 (555) 123-4567<br>
+            envitectdesigns.com
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Letterhead -->
+    <div>
+      <div class="label" style="margin-bottom:12px;">Document Letterhead</div>
+      <div class="mockup-letterhead">
+        <div class="lh-header">
+          <div style="display:flex;align-items:center;gap:10px;">
+            <svg width="24" height="24" viewBox="0 0 84 84" fill="none">
+              <path d="M6 6 L42 6 L42 42 L28 42 L28 20 L6 20 Z" fill="white"/>
+              <path d="M78 78 L42 78 L42 42 L56 42 L56 64 L78 64 Z" fill="#0A8A7A"/>
+              <rect x="38" y="38" width="8" height="8" fill="#F0C96B"/>
+              <line x1="6" y1="13" x2="42" y2="13" stroke="rgba(255,255,255,0.2)" stroke-width="1.2" stroke-dasharray="3 3"/>
+              <line x1="16" y1="6" x2="16" y2="20" stroke="rgba(255,255,255,0.2)" stroke-width="1.2" stroke-dasharray="3 3"/>
+              <path d="M44 78 Q62 68 78 68" stroke="rgba(255,255,255,0.2)" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+            </svg>
+            <div class="lh-logo-text">Envitect<span>.</span> Designs</div>
+          </div>
+          <div class="lh-contact-small">
+            <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d8b0bdb4b4b798bdb6aeb1acbdbbacbcbdabb1bfb6abf6bbb7b5">[email&#160;protected]</a><br>
+            +1 (555) 123-4567<br>
+            envitectdesigns.com
+          </div>
+        </div>
+        <div class="lh-body">
+          <div class="lh-date">MARCH 2024 · PROJECT PROPOSAL</div>
+          <div class="lh-lines">
+            <div class="lh-line full"></div>
+            <div class="lh-line medium"></div>
+            <div class="lh-line full"></div>
+            <div class="lh-line short"></div>
+            <div class="lh-line full" style="margin-top:8px;"></div>
+            <div class="lh-line medium"></div>
+          </div>
+        </div>
+        <div class="lh-footer">
+          <div class="lh-footer-text">Architecture · BIM · CAD · Solar · Graphic Design</div>
+          <div class="lh-footer-text">Page 1 of 1</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Office Signage -->
+    <div>
+      <div class="label" style="margin-bottom:12px;">Office Signage</div>
+      <div class="mockup-signage">
+        <svg width="48" height="48" viewBox="0 0 84 84" fill="none">
+          <path d="M6 6 L42 6 L42 42 L28 42 L28 20 L6 20 Z" fill="white"/>
+          <path d="M78 78 L42 78 L42 42 L56 42 L56 64 L78 64 Z" fill="rgba(255,255,255,0.28)"/>
+          <rect x="38" y="38" width="8" height="8" fill="#F0C96B"/>
+          <line x1="6" y1="13" x2="42" y2="13" stroke="rgba(255,255,255,0.18)" stroke-width="1.2" stroke-dasharray="3 3"/>
+          <line x1="16" y1="6" x2="16" y2="20" stroke="rgba(255,255,255,0.18)" stroke-width="1.2" stroke-dasharray="3 3"/>
+          <path d="M44 78 Q62 68 78 68" stroke="rgba(255,255,255,0.2)" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+        </svg>
+        <div>
+          <div class="signage-word">Envitect<span style="color:#F0C96B;">.</span></div>
+          <div class="signage-word" style="font-size:20px;color:rgba(255,255,255,0.4);font-weight:300;letter-spacing:0.15em;">DESIGNS</div>
+        </div>
+        <div class="signage-tagline">Design. Engineer. Deliver.</div>
+      </div>
+    </div>
+
+    <!-- Email Signature -->
+    <div>
+      <div class="label" style="margin-bottom:12px;">Email Signature</div>
+      <div class="mockup-email-sig">
+        <div class="sig-name">Priya Mehta</div>
+        <div class="sig-role">Senior CAD Drafter · Envitect Designs</div>
+        <div class="sig-divider"></div>
+        <div class="sig-contact-row">
+          <span class="sig-contact-item"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c7b7b5aebea687a2a9b1aeb3a2a4b3a3a2b4aea0a9b4e9a4a8aa">[email&#160;protected]</a></span>
+          <span class="sig-contact-item">+1 (555) 123-4567</span>
+        </div>
+        <div class="sig-brand-line">
+          <div style="width:20px;height:20px;flex-shrink:0;">
+            <svg viewBox="0 0 84 84" fill="none">
+              <path d="M6 6 L42 6 L42 42 L28 42 L28 20 L6 20 Z" fill="#0E0F0D"/>
+              <path d="M78 78 L42 78 L42 42 L56 42 L56 64 L78 64 Z" fill="#0A8A7A"/>
+              <rect x="38" y="38" width="8" height="8" fill="#F0C96B"/>
+              <line x1="6" y1="13" x2="42" y2="13" stroke="rgba(255,255,255,0.22)" stroke-width="1.2" stroke-dasharray="3 3"/>
+              <line x1="16" y1="6" x2="16" y2="20" stroke="rgba(255,255,255,0.22)" stroke-width="1.2" stroke-dasharray="3 3"/>
+              <path d="M44 78 Q62 68 78 68" stroke="rgba(255,255,255,0.2)" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div>
+            <div class="sig-brand-word">Envitect<span>.</span> Designs</div>
+            <div class="sig-tagline-small">envitectdesigns.com</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- PAGE 7 · SERVICES & BRAND VOICE -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<section class="page" id="services-page">
+  <div class="page-header">
+    <div class="page-header-left">
+      <div class="section-num">06 — Services Identity & Brand Voice</div>
+      <h2>Voice</h2>
+    </div>
+    <div class="page-header-right">
+      <span class="brand-tag">Envitect Designs · Brand Guidelines</span>
+    </div>
+  </div>
+
+  <div class="services-content">
+
+    <div class="label" style="margin-bottom:14px;">Five Service Verticals</div>
+    <div class="service-identity-grid">
+      <div class="service-id-card" style="--accent:#0A8A7A;">
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:#0A8A7A;"></div>
+        <div class="service-icon-wrap">
+          <svg width="22" height="22" fill="none" stroke="#0A8A7A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 32 32"><path d="M4 28V14L16 4l12 10v14H4z"/><rect x="12" y="20" width="8" height="8"/></svg>
+        </div>
+        <div class="service-name">Architecture &amp; Interior</div>
+        <div class="service-desc">Residential, commercial, 3D vis, renovation</div>
+      </div>
+      <div class="service-id-card">
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:#065A4F;"></div>
+        <div class="service-icon-wrap">
+          <svg width="22" height="22" fill="none" stroke="#065A4F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 32 32"><rect x="4" y="6" width="24" height="20" rx="1"/><line x1="10" y1="12" x2="22" y2="12"/><line x1="10" y1="16" x2="22" y2="16"/><line x1="10" y1="20" x2="16" y2="20"/><line x1="4" y1="10" x2="28" y2="10"/></svg>
+        </div>
+        <div class="service-name">CAD Drafting</div>
+        <div class="service-desc">Arch, structural, MEP, paper-to-CAD</div>
+      </div>
+      <div class="service-id-card">
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:#3A4050;"></div>
+        <div class="service-icon-wrap">
+          <svg width="22" height="22" fill="none" stroke="#3A4050" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 32 32"><path d="M16 4l12 7v10L16 28 4 21V11L16 4z"/><path d="M16 4v24M28 11L4 21M4 11l24 10"/></svg>
+        </div>
+        <div class="service-name">BIM Services</div>
+        <div class="service-desc">Revit, clash detection, scan-to-BIM</div>
+      </div>
+      <div class="service-id-card">
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:#F0C96B;"></div>
+        <div class="service-icon-wrap">
+          <svg width="22" height="22" fill="none" stroke="#F0C96B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 32 32"><circle cx="16" cy="16" r="6"/><line x1="16" y1="4" x2="16" y2="7"/><line x1="16" y1="25" x2="16" y2="28"/><line x1="4" y1="16" x2="7" y2="16"/><line x1="25" y1="16" x2="28" y2="16"/><line x1="8" y1="8" x2="10.1" y2="10.1"/><line x1="21.9" y1="21.9" x2="24" y2="24"/></svg>
+        </div>
+        <div class="service-name">Solar Design</div>
+        <div class="service-desc">Permit plans, proposals, PE stamping</div>
+      </div>
+      <div class="service-id-card">
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:#0E0F0D;"></div>
+        <div class="service-icon-wrap">
+          <svg width="22" height="22" fill="none" stroke="#0E0F0D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 32 32"><circle cx="10" cy="10" r="4"/><circle cx="22" cy="10" r="4"/><circle cx="16" cy="21" r="4"/></svg>
+        </div>
+        <div class="service-name">Graphic Design</div>
+        <div class="service-desc">Branding, brochures, signage, decks</div>
+      </div>
+    </div>
+
+    <div class="label" style="margin-bottom:16px;">Brand Voice &amp; Tone</div>
+    <div class="brand-voice">
+
+      <div class="voice-card">
+        <div class="voice-card-label">We Say → Not</div>
+        <div class="voice-pairs">
+          <div class="voice-pair">
+            <span class="voice-to">Deliver</span>
+            <span class="voice-arrow">→</span>
+            <span class="voice-from">Provide solutions</span>
+          </div>
+          <div class="voice-pair">
+            <span class="voice-to">Precision</span>
+            <span class="voice-arrow">→</span>
+            <span class="voice-from">Accuracy</span>
+          </div>
+          <div class="voice-pair">
+            <span class="voice-to">Execute</span>
+            <span class="voice-arrow">→</span>
+            <span class="voice-from">Implement</span>
+          </div>
+          <div class="voice-pair">
+            <span class="voice-to">Partner</span>
+            <span class="voice-arrow">→</span>
+            <span class="voice-from">Vendor / Provider</span>
+          </div>
+          <div class="voice-pair">
+            <span class="voice-to">Smarter</span>
+            <span class="voice-arrow">→</span>
+            <span class="voice-from">More efficient</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="voice-card">
+        <div class="voice-card-label">Brand Character Words</div>
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          <div>
+            <div class="voice-word">Expert</div>
+            <div class="voice-word-def">We lead with knowledge. Our clients trust us because we know their industry as well as they do.</div>
+          </div>
+          <div class="rule-h"></div>
+          <div>
+            <div class="voice-word">Precise</div>
+            <div class="voice-word-def">Every drawing, model, and design is held to an exacting standard. We don't guess—we verify.</div>
+          </div>
+          <div class="rule-h"></div>
+          <div>
+            <div class="voice-word">Forward</div>
+            <div class="voice-word-def">We're not nostalgic about process. We adopt new technology, methods, and thinking proactively.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- PAGE 8 · GUIDELINES & CONTACT -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<section class="page" id="guidelines-page">
+  <div class="page-header">
+    <div class="page-header-left">
+      <div class="section-num">07 — Do's, Don'ts &amp; Contacts</div>
+      <h2>Guidelines</h2>
+    </div>
+    <div class="page-header-right">
+      <span class="brand-tag">Envitect Designs · Brand Guidelines</span>
+    </div>
+  </div>
+
+  <div class="guidelines-content">
+
+    <!-- LEFT: Don'ts -->
+    <div>
+      <div class="label" style="margin-bottom:16px;">Logo Don'ts</div>
+      <div class="donts-grid">
+
+        <div class="dont-card">
+          <div class="dont-inner" style="background:linear-gradient(135deg,#f472b6,#a855f7);">
+            <svg width="40" height="40" viewBox="0 0 84 84" fill="none">
+              <path d="M6 6 L42 6 L42 42 L28 42 L28 20 L6 20 Z" fill="white" opacity="0.9"/>
+              <path d="M78 78 L42 78 L42 42 L56 42 L56 64 L78 64 Z" fill="rgba(255,255,255,0.5)"/>
+              <rect x="38" y="38" width="8" height="8" fill="yellow"/>
+            </svg>
+          </div>
+          <div class="dont-label">No unapproved color backgrounds</div>
+        </div>
+
+        <div class="dont-card">
+          <div class="dont-inner" style="background:var(--paper);">
+            <svg width="40" height="40" viewBox="0 0 84 84" fill="none" style="transform:skewX(15deg) rotate(20deg);">
+              <path d="M6 6 L42 6 L42 42 L28 42 L28 20 L6 20 Z" fill="#0E0F0D"/>
+              <path d="M78 78 L42 78 L42 42 L56 42 L56 64 L78 64 Z" fill="#0A8A7A"/>
+              <rect x="38" y="38" width="8" height="8" fill="#F0C96B"/>
+            </svg>
+          </div>
+          <div class="dont-label">No rotation or distortion</div>
+        </div>
+
+        <div class="dont-card">
+          <div class="dont-inner" style="background:var(--paper);">
+            <svg width="40" height="40" viewBox="0 0 84 84" fill="none" style="opacity:0.18;">
+              <path d="M6 6 L42 6 L42 42 L28 42 L28 20 L6 20 Z" fill="#0E0F0D"/>
+              <path d="M78 78 L42 78 L42 42 L56 42 L56 64 L78 64 Z" fill="#0A8A7A"/>
+              <rect x="38" y="38" width="8" height="8" fill="#F0C96B"/>
+            </svg>
+          </div>
+          <div class="dont-label">No low opacity / watermark use</div>
+        </div>
+
+        <div class="dont-card">
+          <div class="dont-inner" style="background:var(--paper);">
+            <div style="font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:700;color:#0E0F0D;letter-spacing:0.02em;text-transform:uppercase;line-height:1;">
+              <span style="color:#E05252;">ENVITECT</span><br>
+              <span style="font-size:13px;color:rgba(14,15,13,0.35);">DESIGNS LLC</span>
+            </div>
+          </div>
+          <div class="dont-label">No wordmark recoloring</div>
+        </div>
+
+      </div>
+
+      <!-- Brand promise -->
+      <div class="brand-promise">
+        <div class="promise-quote">"We build the invisible framework that makes great architecture possible."</div>
+        <div class="promise-attr">Envitect Designs · Brand Promise</div>
+      </div>
+    </div>
+
+    <!-- RIGHT: Contact + Info -->
+    <div style="display:flex;flex-direction:column;gap:32px;">
+
+      <div>
+        <div class="label" style="margin-bottom:16px;">Brand Asset Contacts</div>
+        <div class="contact-info-block">
+          <div class="contact-row">
+            <span class="contact-key">Brand Queries</span>
+            <span class="contact-val"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d7bfb2bbbbb897b2b9a1bea3b2b4a3b3b2a4beb0b9a4f9b4b8ba">[email&#160;protected]</a></span>
+          </div>
+          <div class="contact-row">
+            <span class="contact-key">Phone</span>
+            <span class="contact-val">+1 (555) 123-4567</span>
+          </div>
+          <div class="contact-row">
+            <span class="contact-key">Website</span>
+            <span class="contact-val">envitectdesigns.com</span>
+          </div>
+          <div class="contact-row">
+            <span class="contact-key">Headquarters</span>
+            <span class="contact-val">India &amp; United States</span>
+          </div>
+          <div class="contact-row">
+            <span class="contact-key">Response SLA</span>
+            <span class="contact-val">Within 24 Hours</span>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="label" style="margin-bottom:16px;">Asset Checklist</div>
+        <div style="display:flex;flex-direction:column;gap:0;border:1px solid var(--rule);border-radius:2px;overflow:hidden;">
+          <div style="padding:12px 16px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--rule);background:#fff;">
+            <div style="width:16px;height:16px;border:2px solid var(--teal);border-radius:2px;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><div style="width:8px;height:1.5px;background:var(--teal);transform:rotate(45deg) translate(1px,0);"></div></div>
+            <span style="font-size:13px;font-weight:400;color:var(--slate);">Logo SVG (primary, reversed, mark-only)</span>
+          </div>
+          <div style="padding:12px 16px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--rule);background:#fff;">
+            <div style="width:16px;height:16px;border:2px solid var(--teal);border-radius:2px;flex-shrink:0;"></div>
+            <span style="font-size:13px;font-weight:400;color:var(--slate);">Brand color swatches (.ASE, .CLR)</span>
+          </div>
+          <div style="padding:12px 16px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--rule);background:#fff;">
+            <div style="width:16px;height:16px;border:2px solid var(--teal);border-radius:2px;flex-shrink:0;"></div>
+            <span style="font-size:13px;font-weight:400;color:var(--slate);">Typography license files</span>
+          </div>
+          <div style="padding:12px 16px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--rule);background:#fff;">
+            <div style="width:16px;height:16px;border:2px solid var(--teal);border-radius:2px;flex-shrink:0;"></div>
+            <span style="font-size:13px;font-weight:400;color:var(--slate);">Icon set SVG library</span>
+          </div>
+          <div style="padding:12px 16px;display:flex;align-items:center;gap:12px;background:#fff;">
+            <div style="width:16px;height:16px;border:2px solid var(--teal);border-radius:2px;flex-shrink:0;"></div>
+            <span style="font-size:13px;font-weight:400;color:var(--slate);">Document templates (.DOCX, .PPTX)</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="background:var(--teal-pale);border:1px solid rgba(10,138,122,0.2);border-radius:2px;padding:24px;">
+        <div class="label" style="color:var(--teal-deep);margin-bottom:12px;">Document Info</div>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <div style="display:flex;justify-content:space-between;">
+            <span class="label">Version</span>
+            <span style="font-family:'DM Mono',monospace;font-size:10px;color:var(--teal-deep);">1.0 · 2024</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;">
+            <s
