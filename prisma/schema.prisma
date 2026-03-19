@@ -1,0 +1,139 @@
+// Envitect Designs — Prisma Schema
+// Prisma 7 · MySQL · Generated client output: src/generated/prisma
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "mysql"
+}
+
+// ─────────────────────────────────────────────
+// 1. Contact Form Submissions
+// ─────────────────────────────────────────────
+model Contact {
+  id        String        @id @default(cuid())
+  name      String        @db.VarChar(100)
+  email     String        @db.VarChar(254)
+  company   String?       @db.VarChar(150)
+  phone     String?       @db.VarChar(20)
+  service   String?       @db.VarChar(100)
+  budget    String?       @db.VarChar(50)
+  message   String        @db.Text
+  status    ContactStatus @default(NEW)
+  ipAddress String?       @db.VarChar(45) // IPv6 max length
+  createdAt DateTime      @default(now())
+  updatedAt DateTime      @updatedAt
+
+  @@index([status])
+  @@index([createdAt])
+  @@map("contacts")
+}
+
+enum ContactStatus {
+  NEW
+  READ
+  REPLIED
+  ARCHIVED
+}
+
+// ─────────────────────────────────────────────
+// 2. Job Applications
+// ─────────────────────────────────────────────
+model JobApplication {
+  id          String            @id @default(cuid())
+  name        String            @db.VarChar(100)
+  email       String            @db.VarChar(254)
+  phone       String?           @db.VarChar(20)
+  position    String            @db.VarChar(150)
+  coverLetter String?           @db.Text
+  resumeUrl   String?           @db.VarChar(500) // path to uploaded file
+  resumeName  String?           @db.VarChar(255) // original filename
+  status      ApplicationStatus @default(NEW)
+  ipAddress   String?           @db.VarChar(45)
+  createdAt   DateTime          @default(now())
+  updatedAt   DateTime          @updatedAt
+
+  @@index([status])
+  @@index([position])
+  @@index([createdAt])
+  @@map("job_applications")
+}
+
+enum ApplicationStatus {
+  NEW
+  REVIEWING
+  SHORTLISTED
+  INTERVIEWED
+  REJECTED
+  HIRED
+}
+
+// ─────────────────────────────────────────────
+// 3. Blog Posts
+// ─────────────────────────────────────────────
+model BlogPost {
+  id           String    @id @default(cuid())
+  title        String    @db.VarChar(255)
+  slug         String    @unique @db.VarChar(255)
+  excerpt      String    @db.VarChar(500)
+  content      String    @db.LongText // sanitized HTML from rich text editor
+  category     String    @db.VarChar(100)
+  featuredImage String?  @db.VarChar(500) // image URL or path
+  published    Boolean   @default(false)
+  publishedAt  DateTime?
+  authorId     String
+  author       AdminUser @relation(fields: [authorId], references: [id])
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  @@index([slug])
+  @@index([published])
+  @@index([category])
+  @@index([publishedAt])
+  @@map("blog_posts")
+}
+
+// ─────────────────────────────────────────────
+// 4. Job Listings
+// ─────────────────────────────────────────────
+model JobListing {
+  id           String   @id @default(cuid())
+  title        String   @db.VarChar(150)
+  department   String   @db.VarChar(100)
+  type         String   @db.VarChar(50)  // Full-time, Part-time, Contract
+  location     String   @db.VarChar(100) // Remote, On-site, city name
+  description  String   @db.Text
+  requirements String   @db.Text
+  active       Boolean  @default(true)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@index([active])
+  @@index([department])
+  @@map("job_listings")
+}
+
+// ─────────────────────────────────────────────
+// 5. Admin Users
+// ─────────────────────────────────────────────
+model AdminUser {
+  id           String     @id @default(cuid())
+  email        String     @unique @db.VarChar(254)
+  passwordHash String     @db.VarChar(72) // bcrypt max 72 chars
+  name         String     @db.VarChar(100)
+  role         AdminRole  @default(EDITOR)
+  blogPosts    BlogPost[]
+  lastLoginAt  DateTime?
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+
+  @@map("admin_users")
+}
+
+enum AdminRole {
+  SUPER_ADMIN
+  EDITOR
+}
